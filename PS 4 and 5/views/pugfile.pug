@@ -1,0 +1,23 @@
+// views/template.pug
+doctype html
+html
+  head
+    title Last.fm API Demo
+  body
+    h1 Last.fm API Demo
+    form(action='/ps4/promises', method='post')
+      label(for='artist') Enter Artist:
+      input(type='text', id='artist', name='artist', required)
+      button(type='submit') Fetch Data with Promises
+    form(action='/ps4/asyncawait', method='post')
+      label(for='artist') Enter Artist:
+      input(type='text', id='artist', name='artist', required)
+      button(type='submit') Fetch Data with Async/Await
+    form(action='/ps4/callbacks', method='post')
+      label(for='artist') Enter Artist:
+      input(type='text', id='artist', name='artist', required)
+      button(type='submit') Fetch Data with Callbacks
+    if data
+      pre
+        code
+          | #{JSON.stringify(data, null, 2)}
